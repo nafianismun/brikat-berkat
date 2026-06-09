@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Briket Berkat | NAF Company Investor Deck</title>
+    <title>NAF Company | Briket Berkat Investor Relations</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 1. VARIABEL WARNA & DESAIN --- */
+        /* --- 1. VARIABEL DESAIN (DARK LUXURY) --- */
         :root {
-            --sidebar-width: 280px;
-            --bg-dark: #050505;
-            --bg-light: #F9FAFB;
-            --text-dark: #1F2937;
-            --text-light: #F3F4F6;
-            --brand-gold: #FFC000;
-            --brand-gold-dark: #D9A400;
+            --sidebar-width: 300px;
+            --bg-pure-black: #050505;
+            --bg-surface: #111111;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --brand-gold: #D4AF37; /* Emas Klasik/Premium */
+            --brand-gold-dim: rgba(212, 175, 55, 0.2);
+            --glass-bg: rgba(10, 10, 10, 0.65);
         }
 
         * {
@@ -30,290 +31,250 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
+            background-color: var(--bg-pure-black);
+            color: var(--text-main);
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* --- 2. SIDEBAR NAVIGASI (KIRI ATAS) --- */
+        /* --- 2. SIDEBAR NAVIGASI (KIRI) --- */
         .sidebar {
             position: fixed;
             top: 0;
             left: 0;
             width: var(--sidebar-width);
             height: 100vh;
-            background-color: var(--bg-dark);
-            border-right: 1px solid rgba(255, 192, 0, 0.2);
-            padding: 50px 30px;
+            background-color: #000;
+            border-right: 1px solid var(--brand-gold-dim);
+            padding: 50px 40px;
             display: flex;
             flex-direction: column;
             z-index: 1000;
-            box-shadow: 5px 0 20px rgba(0,0,0,0.5);
         }
 
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            gap: 15px;
+        .brand-box {
             margin-bottom: 60px;
+            text-decoration: none;
+            display: block;
         }
-        .brand-logo img {
-            height: 45px;
-            width: 45px;
+        .brand-box img {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            background-color: #fff;
+            background: #fff;
             padding: 2px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
         }
-        .brand-text {
+        .brand-title {
             font-size: 20px;
             font-weight: 800;
             color: #fff;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
-        .brand-text span { color: var(--brand-gold); }
+        .brand-title span { color: var(--brand-gold); }
 
-        .sidebar-nav {
+        .nav-links {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
+            flex-grow: 1;
         }
-        .sidebar-nav a {
-            color: #A1A1AA;
+        .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: all 0.3s ease;
             position: relative;
-            padding-left: 0;
         }
-        .sidebar-nav a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: var(--brand-gold);
-            padding-left: 10px;
+            padding-left: 8px;
         }
 
-        .sidebar-contact {
-            margin-top: auto;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .sidebar-footer {
+            border-top: 1px solid var(--brand-gold-dim);
             padding-top: 30px;
         }
-        .sidebar-contact p {
-            color: #fff;
-            font-size: 11px;
+        .sidebar-footer p {
+            font-size: 10px;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-bottom: 10px;
-            color: var(--brand-gold);
         }
-        .sidebar-contact a {
+        .sidebar-footer a {
             color: #fff;
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
             display: block;
-            margin-bottom: 5px;
+            transition: color 0.3s ease;
         }
+        .sidebar-footer a:hover { color: var(--brand-gold); }
 
         /* --- 3. KONTEN UTAMA --- */
-        .main-content {
+        .main-wrapper {
             margin-left: var(--sidebar-width);
             width: calc(100% - var(--sidebar-width));
         }
 
         section {
-            padding: 100px 8%;
-        }
-
-        .section-header {
-            margin-bottom: 50px;
-        }
-        .section-header h2 {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .section-header p {
-            font-size: 14px;
-            color: var(--brand-gold-dark);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        /* --- 4. HERO SECTION (GELAP) --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('pexels-martin-bohac-138434526-10475925.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-        }
-        .hero-text h1 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-        .hero-text p {
-            font-size: 18px;
-            font-weight: 400;
-            max-width: 600px;
-            color: #E5E7EB;
-            margin-bottom: 40px;
-        }
-
-        /* --- 5. LATAR BELAKANG (TERANG) --- */
-        .split-layout {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-        .split-text { flex: 1; }
-        .split-text p {
-            font-size: 16px;
-            color: #4B5563;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        .split-image { flex: 1; }
-        .split-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* --- 6. VISI MISI (GELAP / GLASSMORPHISM) --- */
-        .bg-vision {
-            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)), url('medium-shot-engineers-talking-outdoors.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            color: #fff;
-        }
-        .bg-vision .section-header h2 { color: #fff; }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 12px;
-            border-top: 4px solid var(--brand-gold);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .glass-card h3 {
-            color: var(--brand-gold);
-            font-size: 24px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .glass-card ul { padding-left: 20px; margin-top: 15px; }
-        .glass-card li { margin-bottom: 10px; color: #D1D5DB; }
-
-        /* --- 7. KEUNGGULAN & PASAR (TERANG) --- */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-        .feature-box {
-            background: #fff;
-            padding: 30px 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-bottom: 3px solid var(--brand-gold);
-        }
-        .feature-box h4 { font-size: 28px; color: var(--brand-gold-dark); margin-bottom: 10px; font-weight: 800; }
-        .feature-box p { font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-dark); }
-
-        .market-box {
-            background: #1F2937;
-            color: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        /* --- 8. PROSES PRODUKSI (GELAP) --- */
-        .bg-process {
-            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('pexels-cottonbro-5608056.jpg');
-            background-size: cover;
-            color: #fff;
-        }
-        .bg-process .section-header h2 { color: #fff; }
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .step-card {
-            background: rgba(0,0,0,0.6);
-            padding: 30px;
-            border-left: 2px solid var(--brand-gold);
-        }
-        .step-num { color: var(--brand-gold); font-size: 20px; font-weight: 800; margin-bottom: 10px; display: block; }
-        .step-card h3 { font-size: 16px; margin-bottom: 10px; text-transform: uppercase; }
-        .step-card p { font-size: 13px; color: #A1A1AA; }
-
-        /* --- 9. SERTIFIKASI & KONTAK (GELAP) --- */
-        .bg-sgs {
-            background-color: #000;
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('Screenshot 2026-06-09 012137.png');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
             min-height: 100vh;
+            padding: 100px 8%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: relative;
         }
-        .bg-sgs .section-header h2 { color: #fff; }
-        .contact-box {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 60px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 192, 0, 0.3);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .contact-email {
-            font-size: clamp(24px, 4vw, 42px);
+
+        .section-tag {
             color: var(--brand-gold);
-            text-decoration: none;
-            font-weight: 800;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
             display: block;
-            margin: 20px 0;
         }
-        .btn-wa {
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        /* --- ANIMASI CSS (Akan dipicu oleh JavaScript) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 4. KOMPONEN DESAIN --- */
+        /* Glass Card */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 50px;
+            border-radius: 8px;
+            border-top: 3px solid var(--brand-gold);
+        }
+
+        /* Grid Sistem */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+
+        /* Tombol */
+        .btn-gold {
             display: inline-block;
             background-color: var(--brand-gold);
             color: #000;
-            padding: 15px 35px;
-            border-radius: 5px;
+            padding: 16px 40px;
+            font-size: 13px;
             font-weight: 700;
-            text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 20px;
-            transition: background 0.3s;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
         }
-        .btn-wa:hover { background-color: #fff; }
+        .btn-gold:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px var(--brand-gold-dim);
+        }
+
+        /* --- 5. SECTION BACKGROUNDS & SPESIFIK --- */
+        
+        /* 1. Hero */
+        #hero {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)), url('pexels-martin-bohac-138434526-10475925.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #hero h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); margin-bottom: 20px; }
+        #hero p { font-size: 1.2rem; max-width: 600px; color: #E5E7EB; }
+
+        /* 2. Eksekutif / The Origin */
+        #origin { background-color: var(--bg-surface); }
+        .origin-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem; text-align: justify; }
+
+        /* 3. ESG / Visi Misi */
+        #esg {
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('pexels-tomfisk-1726622.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .esg-card h3 { color: var(--brand-gold); margin-bottom: 20px; font-size: 1.5rem; }
+        .esg-card ul { padding-left: 20px; margin-top: 15px; }
+        .esg-card li { margin-bottom: 12px; color: #D1D5DB; }
+
+        /* 4. Portofolio Produk */
+        .feature-box {
+            background: #111;
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            border-bottom: 2px solid var(--brand-gold);
+            transition: transform 0.3s;
+        }
+        .feature-box:hover { transform: translateY(-10px); }
+        .feature-box h4 { font-size: 2rem; color: var(--brand-gold); margin-bottom: 10px; }
+        .feature-box p { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #fff; }
+
+        /* 5. Strategi Pasar */
+        #market {
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('medium-shot-engineers-talking-outdoors.jpg');
+            background-size: cover;
+        }
+        .market-list { border-left: 2px solid var(--brand-gold); padding-left: 30px; margin-bottom: 30px; }
+        .market-list h4 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
+        .market-list p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* 6. Manufaktur */
+        #manufacturing { background-color: var(--bg-surface); }
+        .step-wrapper { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
+        .step-number { font-size: 3rem; font-weight: 800; color: var(--brand-gold-dim); line-height: 1; }
+        .step-detail h4 { font-size: 1.1rem; color: #fff; margin-bottom: 8px; text-transform: uppercase; }
+        .step-detail p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* 7. Sertifikasi / SGS */
+        #quality {
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('Screenshot 2026-06-09 012137.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 8. Kontak & Penutup */
+        #contact {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url('pexels-maltelu-13037136.jpg');
+            background-size: cover;
+            text-align: center;
+        }
+        .contact-email {
+            font-size: clamp(2rem, 4vw, 4rem);
+            color: var(--brand-gold);
+            font-weight: 800;
+            text-decoration: none;
+            display: block;
+            margin: 30px 0;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
 
         /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 992px) {
@@ -321,186 +282,296 @@
                 width: 100%;
                 height: auto;
                 position: relative;
-                padding: 20px;
+                padding: 20px 30px;
+                border-right: none;
+                border-bottom: 1px solid var(--brand-gold-dim);
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
             }
-            .sidebar-nav, .sidebar-contact { display: none; /* Disembunyikan di HP agar simpel */ }
-            .brand-logo { margin-bottom: 0; }
-            .main-content { margin-left: 0; width: 100%; }
-            .split-layout { flex-direction: column; }
-            .grid-2 { grid-template-columns: 1fr; }
-            .market-box { flex-direction: column; text-align: center; }
-            section { padding: 60px 5%; }
+            .brand-box { margin-bottom: 0; }
+            .nav-links, .sidebar-footer { display: none; }
+            .main-wrapper { margin-left: 0; width: 100%; }
+            section { padding: 80px 6%; min-height: auto; }
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .step-number { font-size: 2.5rem; }
+            .contact-email { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="sidebar">
-        <a href="#" class="brand-logo">
-            <img src="Black and White Circle Business Logo_20260407_222036_0000.png" alt="Logo NAF">
-            <div class="brand-text">NAF <span>CO.</span></div>
+        <a href="#hero" class="brand-box">
+            <img src="Black and White Circle Business Logo_20260407_222036_0000.png" alt="NAF Logo">
+            <div class="brand-title">NAF <span>CO.</span></div>
         </a>
-        <div class="sidebar-nav">
-            <a href="#latar-belakang">Latar Belakang</a>
-            <a href="#visi-misi">Visi & Misi</a>
-            <a href="#keunggulan">Keunggulan & Pasar</a>
-            <a href="#proses">Proses Produksi</a>
-            <a href="#sertifikasi">Sertifikasi & Kontak</a>
+        <div class="nav-links">
+            <a href="#hero">Beranda</a>
+            <a href="#origin">Ringkasan Eksekutif</a>
+            <a href="#esg">Komitmen ESG</a>
+            <a href="#product">Portofolio Produk</a>
+            <a href="#market">Strategi Ekspansi</a>
+            <a href="#manufacturing">Operasional</a>
+            <a href="#quality">Quality Assurance</a>
+            <a href="#contact">Hubungan Investor</a>
         </div>
-        <div class="sidebar-contact">
-            <p>Investor Relations</p>
+        <div class="sidebar-footer">
+            <p>Direct Inquiries</p>
             <a href="mailto:nafianismun@gmail.com">nafianismun@gmail.com</a>
             <a href="https://wa.me/6281953788109">+62 819 5378 8109</a>
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="main-wrapper">
 
-        <section class="hero" id="hero">
-            <div class="hero-text">
+        <section id="hero">
+            <div class="reveal">
+                <span class="section-tag">Investasi Masa Depan</span>
                 <h1>Briket Berkat</h1>
-                <p>Solusi energi biomassa premium dari Demak, Indonesia. Mengubah limbah organik menjadi briket arang berkualitas ekspor dengan panas maksimal dan tanpa bahan kimia.</p>
+                <p>Solusi energi biomassa premium dari Demak, Indonesia. Mentransformasi limbah organik menjadi briket arang berkualitas ekspor dunia dengan panas maksimal dan 100% bebas kimia.</p>
+                <a href="#origin" class="btn-gold">Eksplorasi Bisnis</a>
             </div>
         </section>
 
-        <section id="latar-belakang">
-            <div class="section-header">
-                <p>The Origin</p>
-                <h2>Latar Belakang</h2>
-            </div>
-            <div class="split-layout">
-                <div class="split-text">
-                    <p>Persoalan energi dan pengelolaan limbah biomassa merupakan dua tantangan yang saling berkaitan, khususnya di wilayah pesisir seperti Demak, Jawa Tengah. Di satu sisi, kebutuhan akan sumber energi alternatif yang terjangkau terus meningkat seiring naiknya harga bahan bakar fosil.</p>
-                    <p>Di sisi lain, limbah tempurung kelapa dari industri pengolahan kopra menumpuk tanpa pemanfaatan optimal. <strong>Briket Berkat (NAF Company)</strong> hadir untuk mengelola limbah biomassa ini secara produktif.</p>
-                    <p>Kami mentransformasi limbah tersebut menjadi produk bernilai ekonomi tinggi yang jauh melampaui kualitas arang konvensional. Kami berkomitmen menjaga kelestarian lingkungan agar generasi mendatang tetap dapat menikmati keindahan alam Nusantara.</p>
+        <section id="origin">
+            <div class="grid-2 align-items-center">
+                <div class="origin-text reveal">
+                    <span class="section-tag">Ringkasan Eksekutif</span>
+                    <h2 class="section-title">The Origin</h2>
+                    <p>Persoalan energi dan pengelolaan limbah biomassa merupakan tantangan krusial, khususnya di wilayah pesisir Demak, Jawa Tengah. Seiring dengan melonjaknya kebutuhan energi alternatif pengganti fosil, jutaan ton limbah tempurung kelapa dari industri kopra terbuang sia-sia.</p>
+                    <p><strong>Briket Berkat (NAF Company)</strong> didirikan untuk menjembatani celah tersebut. Kami mengelola limbah biomassa secara produktif, mengubahnya menjadi arang briket bernilai ekonomi tinggi yang jauh melampaui efisiensi arang konvensional.</p>
                 </div>
-                <div class="split-image">
-                    <img src="pexels-tomfisk-1726622.jpg" alt="Lahan Hijau Berkelanjutan">
+                <div class="reveal">
+                    <img src="pexels-cottonbro-5608056.jpg" alt="Bahan Baku Tempurung Kelapa" style="width: 100%; border-radius: 8px; border-bottom: 5px solid var(--brand-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
                 </div>
             </div>
         </section>
 
-        <section id="visi-misi" class="bg-vision">
-            <div class="section-header">
-                <p>Tujuan & Komitmen</p>
-                <h2>Visi & Misi</h2>
+        <section id="esg">
+            <div class="reveal">
+                <span class="section-tag">Sustainability (Keberlanjutan)</span>
+                <h2 class="section-title">Komitmen ESG</h2>
             </div>
-            <div class="grid-2">
-                <div class="glass-card">
-                    <h3>Visi Kami</h3>
-                    <p style="color: #D1D5DB; line-height: 1.8;">Menjadi produsen briket arang tempurung kelapa terpercaya yang berkontribusi nyata pada pengelolaan lingkungan dan pemberdayaan ekonomi lokal di Jawa Tengah.</p>
+            <div class="grid-2 reveal">
+                <div class="glass-panel esg-card">
+                    <h3>Visi Perusahaan</h3>
+                    <p>Menjadi produsen briket arang tempurung kelapa global yang terpercaya, berkontribusi nyata pada kelestarian lingkungan (Zero Deforestation) dan pemberdayaan ekonomi sirkular lokal di Jawa Tengah.</p>
                 </div>
-                <div class="glass-card">
-                    <h3>Misi Kami</h3>
+                <div class="glass-panel esg-card">
+                    <h3>Misi Strategis</h3>
                     <ul>
-                        <li>Memanfaatkan limbah tempurung kelapa secara optimal menjadi produk bernilai ekonomi tinggi.</li>
-                        <li>Menghasilkan briket arang kualitas ekspor dengan standar kompetitif (kadar air, abu, dan nilai kalor).</li>
-                        <li>Membangun kemitraan strategis dengan petani kelapa lokal untuk menjamin rantai pasok yang berkelanjutan.</li>
+                        <li>Optimalisasi 100% limbah organik tanpa penebangan pohon.</li>
+                        <li>Memproduksi briket standar SGS untuk pasar ekspor Eropa dan Timur Tengah.</li>
+                        <li>Membangun kemitraan *fair-trade* dengan petani kelapa lokal untuk rantai pasok jangka panjang.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="keunggulan">
-            <div class="section-header">
-                <p>Keunggulan Kompetitif</p>
-                <h2>Kualitas Ekspor</h2>
+        <section id="product">
+            <div class="reveal">
+                <span class="section-tag">Spesifikasi Premium</span>
+                <h2 class="section-title">Portofolio Produk</h2>
+                <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 50px;">Briket Berkat didesain khusus (Hexagonal, Silinder, Kotak) menggunakan perekat alami tepung tapioka. Aman untuk industri pangan (Food-Safe) dan ideal untuk budaya Barbeque (BBQ) internasional maupun kebutuhan industri.</p>
             </div>
-            
-            <div class="grid-4">
+            <div class="grid-4 reveal">
+                <div class="feature-box">
+                    <h4>7.200</h4>
+                    <p>Kcal/kg Nilai Kalor</p>
+                </div>
                 <div class="feature-box">
                     <h4>3 Jam</h4>
                     <p>Durasi Bakar</p>
                 </div>
                 <div class="feature-box">
-                    <h4>100%</h4>
-                    <p>Bahan Alami (Tanpa Kimia)</p>
+                    <h4>< 4%</h4>
+                    <p>Kadar Air (Moisture)</p>
                 </div>
                 <div class="feature-box">
-                    <h4>Rendah</h4>
-                    <p>Asap & Bau</p>
-                </div>
-                <div class="feature-box">
-                    <h4>Ramah</h4>
-                    <p>Lingkungan (Eco-Friendly)</p>
+                    <h4>> 80%</h4>
+                    <p>Fixed Carbon</p>
                 </div>
             </div>
-
-            <div class="market-box">
-                <div style="flex: 1;">
-                    <h3 style="color: var(--brand-gold); font-size: 24px; margin-bottom: 15px;">Target Pasar & Keunggulan Strategis</h3>
-                    <p style="color: #D1D5DB; margin-bottom: 15px;">Permintaan briket tempurung kelapa terus meningkat tajam, khususnya dari negara-negara Eropa (untuk budaya BBQ) dan kawasan Timur Tengah.</p>
-                    <p style="color: #D1D5DB;"><strong>Keunggulan Logistik:</strong> Fasilitas produksi kami berada di Demak, sangat dekat dengan <strong>Pelabuhan Tanjung Emas, Semarang</strong>, memberikan efisiensi luar biasa dalam biaya logistik untuk pengiriman ekspor.</p>
+            <div class="grid-4 reveal" style="margin-top: 20px;">
+                <div class="feature-box" style="background: transparent; border: 1px solid #333;">
+                    <h4 style="font-size: 1.2rem; color: #fff;">100% Alami</h4>
+                    <p style="color: var(--text-muted);">Bebas Kimia</p>
+                </div>
+                <div class="feature-box" style="background: transparent; border: 1px solid #333;">
+                    <h4 style="font-size: 1.2rem; color: #fff;">Rendah Asap</h4>
+                    <p style="color: var(--text-muted);">Tidak Berbau</p>
+                </div>
+                <div class="feature-box" style="background: transparent; border: 1px solid #333;">
+                    <h4 style="font-size: 1.2rem; color: #fff;">Kadar Abu</h4>
+                    <p style="color: var(--text-muted);">Maksimal 2.5%</p>
+                </div>
+                <div class="feature-box" style="background: transparent; border: 1px solid #333;">
+                    <h4 style="font-size: 1.2rem; color: #fff;">Efisien</h4>
+                    <p style="color: var(--text-muted);">Mudah Terbakar</p>
                 </div>
             </div>
         </section>
 
-        <section id="proses" class="bg-process">
-            <div class="section-header">
-                <p>Manufaktur</p>
-                <h2>Proses Produksi</h2>
-            </div>
-            <div class="grid-3">
-                <div class="step-card">
-                    <span class="step-num">01. Pengadaan Bahan Baku</span>
-                    <p>Tempurung kelapa berkualitas tinggi dengan kadar air di bawah 15% diperoleh dari pengepul lokal Jepara.</p>
+        <section id="market">
+            <div class="grid-2">
+                <div class="glass-panel reveal">
+                    <span class="section-tag">Market Analysis</span>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 30px;">Strategi Ekspansi</h2>
+                    
+                    <div class="market-list">
+                        <h4>Pasar Ekspor (Fokus Utama)</h4>
+                        <p>Tingginya budaya BBQ di Eropa (Jerman, Belanda) dan kebutuhan sosial di Timur Tengah (Arab Saudi, UEA). Harga ekspor menjanjikan margin tinggi (USD 1.5 - 2.5/kg).</p>
+                    </div>
+                    <div class="market-list">
+                        <h4>Penetrasi Domestik</h4>
+                        <p>Suplai rutin ke restoran BBQ, warung sate, dan katering di area Pantai Utara Jawa (Demak, Kudus, Jepara).</p>
+                    </div>
+                    <div class="market-list">
+                        <h4>Distribusi Digital (E-Commerce)</h4>
+                        <p>Penjualan ritel (1kg, 3kg, 5kg) melalui Shopee, Tokopedia, dan pemasaran agresif via Instagram/TikTok (@briketberkat.official).</p>
+                    </div>
                 </div>
-                <div class="step-card">
-                    <span class="step-num">02. Karbonisasi</span>
-                    <p>Pembakaran dalam <i>retort kiln</i> tertutup pada suhu 300-500°C selama 4-6 jam dengan sistem pirolisis untuk meminimalisir emisi.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">03. Penggilingan</span>
-                    <p>Pendinginan selama 12 jam, dilanjutkan dengan penggilingan menjadi serbuk halus berukuran 40-60 mesh.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">04. Pencampuran</span>
-                    <p>Serbuk arang dicampur dengan perekat alami (tepung tapioka) dengan rasio 10:1 hingga homogen dan kokoh.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">05. Pencetakan</span>
-                    <p>Adonan diproses menggunakan mesin press semi-otomatis berkapasitas 50-80 kg/jam (bentuk hexagonal/silinder).</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">06. Pengeringan & Kemas</span>
-                    <p>Pengeringan menggunakan oven selama 1-2 hari hingga kadar air di bawah 8%, dilanjutkan dengan Quality Control.</p>
+                <div class="glass-panel reveal" style="background: rgba(0,0,0,0.85);">
+                    <h3 style="color: var(--brand-gold); margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase;">Keunggulan Kompetitif (SWOT)</h3>
+                    <p style="color: #fff; margin-bottom: 15px;"><strong>Kekuatan Strategis:</strong> Lokasi fasilitas produksi kami di Demak memberikan keunggulan jarak yang sangat efisien menuju <strong>Pelabuhan Tanjung Emas, Semarang</strong>. Hal ini memangkas biaya logistik ekspor secara signifikan.</p>
+                    <p style="color: #fff; margin-bottom: 15px;"><strong>Peluang Ekosistem:</strong> Ketersediaan bahan baku lokal yang melimpah dipadukan dengan regulasi pemerintah yang mendukung ekspor biomassa ramah lingkungan.</p>
+                    <p style="color: #fff;"><strong>Solusi Skalabilitas:</strong> Bermitra dengan Koperasi Briket Jawa Tengah untuk akselerasi ekspor dan pengurusan perizinan (NIB & SGS) yang lebih efisien.</p>
                 </div>
             </div>
         </section>
 
-        <section id="sertifikasi" class="bg-sgs">
-            <div class="section-header">
-                <p>Hubungan Investor</p>
-                <h2>SGS & Kontak Bisnis</h2>
+        <section id="manufacturing">
+            <div class="reveal">
+                <span class="section-tag">Operational Excellence</span>
+                <h2 class="section-title">6 Tahap Manufaktur</h2>
             </div>
-            
-            <div class="contact-box">
-                <h3 style="color: #fff; margin-bottom: 20px; font-weight: 500;">Spesifikasi Target Berdasarkan Standar Internasional</h3>
-                
-                <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 30px;">
-                    <div><span style="color: var(--brand-gold); font-size: 28px; font-weight: 700;">7.200</span><br><span style="font-size: 11px; color: #aaa;">KCAL/KG</span></div>
-                    <div><span style="color: var(--brand-gold); font-size: 28px; font-weight: 700;">Max 4%</span><br><span style="font-size: 11px; color: #aaa;">MOISTURE</span></div>
-                    <div><span style="color: var(--brand-gold); font-size: 28px; font-weight: 700;">Max 2.5%</span><br><span style="font-size: 11px; color: #aaa;">ASH CONTENT</span></div>
-                    <div><span style="color: var(--brand-gold); font-size: 28px; font-weight: 700;">Min 80%</span><br><span style="font-size: 11px; color: #aaa;">FIXED CARBON</span></div>
+            <div class="grid-2 reveal">
+                <div>
+                    <div class="step-wrapper">
+                        <div class="step-number">01</div>
+                        <div class="step-detail">
+                            <h4>Pengadaan Bahan Baku</h4>
+                            <p>Sourcing tempurung kelapa matang dengan kadar air < 15% dari pengepul lokal dan pasar tradisional Jepara.</p>
+                        </div>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="step-number">02</div>
+                        <div class="step-detail">
+                            <h4>Karbonisasi (Pirolisis)</h4>
+                            <p>Pembakaran dalam <i>retort kiln</i> tertutup (300-500°C) selama 4-6 jam. Asap didaur ulang untuk efisiensi energi (Zero Waste).</p>
+                        </div>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="step-number">03</div>
+                        <div class="step-detail">
+                            <h4>Pendinginan & Penggilingan</h4>
+                            <p>Arang didinginkan minimal 12 jam, lalu digiling menggunakan mesin <i>crusher</i> menjadi serbuk mikro 40-60 mesh.</p>
+                        </div>
+                    </div>
                 </div>
+                <div>
+                    <div class="step-wrapper">
+                        <div class="step-number">04</div>
+                        <div class="step-detail">
+                            <h4>Pencampuran (Mixing)</h4>
+                            <p>Serbuk arang diaduk secara homogen dengan cairan perekat alami tepung tapioka (rasio 10:1).</p>
+                        </div>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="step-number">05</div>
+                        <div class="step-detail">
+                            <h4>Pencetakan (Molding)</h4>
+                            <p>Adonan diproses di mesin <i>press</i> hidrolik/semi-otomatis menjadi bentuk presisi tinggi (kapasitas 50-80 kg/jam).</p>
+                        </div>
+                    </div>
+                    <div class="step-wrapper">
+                        <div class="step-number">06</div>
+                        <div class="step-detail">
+                            <h4>Pengeringan & Pengemasan</h4>
+                            <p>Oven termal selama 1-2 hari menurunkan kadar air hingga < 8%. Dilanjutkan dengan inspeksi QC sebelum masuk ke <i>master carton</i>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <p style="color: #E5E7EB; font-size: 14px;">Untuk pertanyaan investasi, pengadaan B2B, dan permintaan sampel ekspor, silakan hubungi kami:</p>
+        <section id="quality">
+            <div class="glass-panel reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <span class="section-tag">Sertifikasi & Standar</span>
+                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 20px;">Quality Assurance</h2>
+                <p style="color: #E5E7EB; font-size: 1.1rem; margin-bottom: 30px;">Setiap *batch* produksi Briket Berkat dipantau secara ketat untuk memenuhi dan melampaui persyaratan importir Eropa, merujuk pada standar laboratorium internasional (SGS / Bureau Veritas).</p>
+                <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; display: flex; justify-content: space-around;">
+                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">SGS</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">TARGET EXPORT</p></div>
+                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">100%</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">NATURAL BINDER</p></div>
+                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">HALAL</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">MID-EAST MARKET</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="glass-panel reveal" style="max-width: 900px; margin: 0 auto; background: rgba(5,5,5,0.85); border: 1px solid var(--brand-gold-dim);">
+                <span class="section-tag">Hubungan Investor</span>
+                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 10px;">Mari Berkolaborasi</h2>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Untuk pertanyaan investasi, pengadaan B2B skala besar, dan permintaan sampel ekspor, silakan hubungi tim eksekutif kami secara langsung.</p>
                 
                 <a href="mailto:nafianismun@gmail.com" class="contact-email">nafianismun@gmail.com</a>
-                <p style="font-size: 18px; color: #fff; font-weight: 600;">+62 819 5378 8109</p>
+                <p style="font-size: 1.5rem; color: #fff; font-weight: 700; margin-bottom: 40px; letter-spacing: 2px;">+62 819 5378 8109</p>
 
-                <a href="https://wa.me/6281953788109" class="btn-wa">Hubungi via WhatsApp</a>
+                <a href="https://wa.me/6281953788109" class="btn-gold">Hubungi Via WhatsApp</a>
             </div>
-
-            <p style="margin-top: 50px; font-size: 12px; color: rgba(255,255,255,0.5);">
-                NAF Ismun Nafian Company &copy; 2026 | Demak, Jawa Tengah, Indonesia
-            </p>
+            
+            <div style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center;">
+                <p style="font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase;">
+                    NAF Ismun Nafian Company &copy; 2026 | Demak, Jawa Tengah, Indonesia
+                </p>
+            </div>
         </section>
 
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animasi Scroll (Reveal on Scroll)
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                
+                reveals.forEach(reveal => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger sekali saat halaman dimuat
+
+            // Highlight Sidebar Navigasi saat di-scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
