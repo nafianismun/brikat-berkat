@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAF Company | Briket Berkat Investor Relations</title>
+    <title>Briket Berkat | NAF Company</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 1. PENGATURAN WARNA & FONT UTAMA --- */
+        /* --- 1. CORE VARIABLES (Ladang Lima Organic Style) --- */
         :root {
-            --bg-pure-black: #000000;
-            --text-pure-white: #FFFFFF;
-            --text-muted: #A1A1AA;
+            --bg-white: #FFFFFF;
+            --bg-light-gray: #F8F9FA;
+            --text-dark: #2D3142;
+            --text-gray: #6C757D;
             --brand-gold: #FFC000;
-            --glass-black: rgba(0, 0, 0, 0.7);
+            --brand-gold-dark: #E6AC00;
         }
 
         * {
@@ -26,380 +27,371 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Efek Scroll Layar Penuh (Tesla Style) */
-        html {
-            scroll-snap-type: y mandatory;
-            scroll-behavior: smooth;
-        }
-        
         body {
-            background-color: var(--bg-pure-black);
-            color: var(--text-pure-white);
-            overflow-x: hidden;
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- 2. NAVIGASI ATAS (HEADER MINIMALIS) --- */
+        /* --- 2. CLEAN & STICKY HEADER --- */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
-            padding: 25px 60px;
+            padding: 15px 5%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         
-        .brand-logo-group {
+        .brand-logo {
             display: flex;
             align-items: center;
             text-decoration: none;
             gap: 15px;
         }
-        .brand-logo-group img {
-            height: 50px;
-            width: 50px;
+        .brand-logo img {
+            height: 55px;
+            width: auto;
             border-radius: 50%;
-            background-color: #fff;
-            padding: 2px;
-            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .brand-text-display {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-pure-white);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        .brand-text-display span {
-            color: var(--brand-gold);
-        }
-
-        nav.tesla-nav {
-            display: flex;
-            gap: 35px;
-        }
-        nav.tesla-nav a {
-            color: var(--text-pure-white);
-            text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
-        nav.tesla-nav a:hover {
-            opacity: 1;
-            color: var(--brand-gold);
-        }
-
-        /* --- 3. PENGATURAN SLIDE UTAMA --- */
-        section {
-            height: 100vh;
-            width: 100vw;
-            scroll-snap-align: start;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15vh 40px 10vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .slide-heading-box {
-            text-align: center;
-            z-index: 10;
-        }
-        .slide-heading-box h1 {
-            font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-            font-weight: 600;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .slide-heading-box p {
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--brand-gold);
-        }
-
-        .slide-interaction-footer {
-            z-index: 10;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-
-        /* --- 4. TOMBOL (BUTTONS) --- */
-        .action-group {
-            display: flex;
-            gap: 25px;
-        }
-        .btn-universal {
-            width: 280px;
-            padding: 16px 0;
-            text-align: center;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .btn-gold-fill {
-            background-color: var(--brand-gold);
-            color: #000;
-        }
-        .btn-gold-fill:hover {
-            background-color: var(--text-pure-white);
-            transform: scale(1.03);
-        }
-        .btn-outline {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: var(--text-pure-white);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        .btn-outline:hover {
-            background-color: var(--text-pure-white);
-            color: #000;
-        }
-
-        /* --- 5. KARTU KONTEN & GRID --- */
-        .info-glass-card {
-            background: var(--glass-black);
-            backdrop-filter: blur(20px);
-            padding: 60px;
-            border-radius: 4px;
-            border-top: 5px solid var(--brand-gold);
-            max-width: 900px;
-            text-align: center;
-            z-index: 10;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        .info-glass-card h2 {
-            font-size: 2.2rem;
-            color: var(--brand-gold);
-            margin-bottom: 25px;
-            text-transform: uppercase;
+        .brand-text {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-dark);
             letter-spacing: 1px;
         }
-        .info-glass-card p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            font-weight: 300;
+        .brand-text span { color: var(--brand-gold-dark); }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        nav a:hover { color: var(--brand-gold-dark); }
+
+        .btn-nav {
+            background-color: var(--brand-gold);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+        .btn-nav:hover { background-color: var(--brand-gold-dark); color: #fff; }
+
+        /* --- 3. HERO BANNER --- */
+        .hero {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 5%;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('pexels-martin-bohac-138434526-10475925.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-content {
+            max-width: 700px;
+            color: #fff;
+            animation: slideUp 1s ease-out;
+        }
+        .hero-content h1 {
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 35px;
             color: #E2E2E2;
         }
-
-        /* Baris Spesifikasi */
-        .specs-strip-visual {
-            display: flex;
-            justify-content: center;
-            gap: 70px;
-            width: 100%;
-            max-width: 1100px;
-            background: rgba(0,0,0,0.7);
-            padding: 35px;
-            border-radius: 4px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-        .spec-unit { text-align: center; }
-        .spec-unit-value {
-            font-size: 38px;
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--brand-gold);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 16px;
             font-weight: 700;
-            color: var(--brand-gold);
-            margin-bottom: 5px;
-        }
-        .spec-unit-label {
-            font-size: 11px;
+            text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
+            box-shadow: 0 10px 20px rgba(255, 192, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .btn-primary:hover { transform: translateY(-3px); }
+
+        /* --- 4. GENERAL SECTION LAYOUT --- */
+        section.content-section {
+            padding: 100px 5%;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--text-dark);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .section-title span {
+            color: var(--brand-gold-dark);
+        }
+        .section-title p {
+            font-size: 16px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* Grid Proses Manufaktur */
-        .manufacturing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+        /* --- 5. TWO-COLUMN SPLIT (About & Vision) --- */
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
             max-width: 1200px;
-            z-index: 10;
+            margin: 0 auto;
         }
-        .m-step {
-            padding: 30px;
-            background: rgba(0,0,0,0.85);
-            border-left: 3px solid var(--brand-gold);
-            text-align: left;
-            transition: all 0.3s ease;
+        .split-text { flex: 1; }
+        .split-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
         }
-        .m-step:hover { background: rgba(255,192,0,0.1); }
-        .m-step-idx { color: var(--brand-gold); font-weight: 700; font-size: 18px; margin-bottom: 10px; display: block; }
-        .m-step h3 { font-size: 14px; text-transform: uppercase; margin-bottom: 8px; color: #fff; }
-        .m-step p { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+        .split-text p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+        .split-image {
+            flex: 1;
+        }
+        .split-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            object-fit: cover;
+            height: 400px;
+        }
 
-        /* --- 6. PENGATURAN FOTO LATAR BELAKANG --- */
-        #slide-hero { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('pexels-cottonbro-5608056.jpg'); }
-        #slide-origin { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('pexels-tomfisk-1726622.jpg'); }
-        #slide-vision { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('medium-shot-engineers-talking-outdoors.jpg'); }
-        #slide-product { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url('pexels-martin-bohac-138434526-10475925.jpg'); }
-        #slide-process { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('pexels-cottonbro-5608056.jpg'); }
+        /* --- 6. SPECS / FEATURES GRID --- */
+        .bg-light { background-color: var(--bg-light-gray); }
         
-        /* Pastikan nama file foto terakhir (foto api) Anda ubah namanya menjadi "foto-api-baru.jpg" di laptop Anda */
-        #slide-contact { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url('foto-api-baru.jpg'); }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--brand-gold);
+        }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-value {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--brand-gold-dark);
+            margin-bottom: 10px;
+        }
+        .feature-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
 
-        /* --- 7. TAMPILAN HP (RESPONSIVE) --- */
-        @media (max-width: 992px) {
-            header { padding: 20px; flex-direction: column; gap: 15px; }
-            .brand-text-display { display: none; }
-            .action-group { flex-direction: column; gap: 15px; }
-            .specs-strip-visual { flex-direction: column; gap: 30px; }
-            .manufacturing-grid { grid-template-columns: 1fr; overflow-y: auto; max-height: 60vh; }
-            nav.tesla-nav { display: none; }
+        /* --- 7. SGS CERTIFICATE SECTION --- */
+        .certificate-section {
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.95)), url('pexels-cottonbro-5608056.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .certificate-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border: 1px solid #eee;
+        }
+        .certificate-wrapper img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* --- 8. FOOTER / CONTACT --- */
+        footer {
+            background-color: var(--text-dark);
+            color: #fff;
+            padding: 80px 5% 40px;
+            text-align: center;
+            position: relative;
+        }
+        .footer-content h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .footer-email {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand-gold);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 30px;
+        }
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            header { flex-direction: column; gap: 15px; padding: 15px; }
+            nav { display: none; }
+            .split-layout { flex-direction: column; }
+            .split-image img { height: auto; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .footer-email { font-size: 24px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="brand-logo-group">
+        <a href="#" class="brand-logo">
             <img src="Black and White Circle Business Logo_20260407_222036_0000.png" alt="NAF Logo">
-            <div class="brand-text-display">NAF <span>COMPANY</span></div>
+            <div class="brand-text">NAF <span>CO.</span></div>
         </a>
-        <nav class="tesla-nav">
-            <a href="#slide-origin">The Origin</a>
-            <a href="#slide-vision">ESG Purpose</a>
-            <a href="#slide-product">The Product</a>
-            <a href="#slide-process">Manufacturing</a>
+        <nav>
+            <a href="#origin">The Origin</a>
+            <a href="#product">Specs</a>
+            <a href="#sgs">Certification</a>
+            <a href="#contact" class="btn-nav">Contact Us</a>
         </nav>
     </header>
 
-    <section id="slide-hero">
-        <div class="slide-heading-box">
-            <h1>Briket Berkat</h1>
-            <p>Premium <span>Indonesian</span> Biomass Solution</p>
-        </div>
-        <div class="slide-interaction-footer">
-            <div class="action-group">
-                <a href="#slide-origin" class="btn-universal btn-gold-fill">Executive Summary</a>
-            </div>
-            <p style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 3px;">Scroll To Begin Pitch</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Indonesian Biomass.</h1>
+            <p>Export-grade coconut charcoal briquettes directly from Demak, Central Java. Sustainable, high-heat, and zero chemicals.</p>
+            <a href="#origin" class="btn-primary">Discover Our Story</a>
         </div>
     </section>
 
-    <section id="slide-origin">
-        <div class="info-glass-card">
-            <h2>Transforming Waste</h2>
-            <p>Driven by the pressing challenge of biomass waste management in Demak, Central Java, NAF Company bridges the gap between environmental responsibility and global energy demand. We valorize abundant coconut shell waste into the world's most efficient sustainable fuel.</p>
+    <section id="origin" class="content-section">
+        <div class="section-title">
+            <h2>The <span>Origin</span></h2>
+            <p>Transforming waste into high-value global energy.</p>
         </div>
-        <div class="slide-interaction-footer">
-            <div class="action-group">
-                <a href="#slide-vision" class="btn-universal btn-outline">ESG Commitment</a>
+        <div class="split-layout">
+            <div class="split-text">
+                <h3>Empowering Local Resources</h3>
+                <p>Energy challenges and biomass waste management are deeply interconnected, especially in Central Java. NAF Company was established to bridge this gap.</p>
+                <p>We productively manage abundant coconut shell waste from local farmers, transforming it into a high-value export product that outperforms conventional energy sources, securing a sustainable future while empowering the local economy.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="slide-vision">
-        <div class="slide-heading-box">
-            <h1>Refining Future</h1>
-            <p>Sustainability & <span>Local Impact</span></p>
-        </div>
-        <div style="display: flex; gap: 30px; max-width: 1100px; z-index: 10; flex-wrap: wrap; justify-content: center;">
-            <div class="info-glass-card" style="flex: 1; padding: 40px;">
-                <h2 style="font-size: 1.5rem;">The Vision</h2>
-                <p style="font-size: 0.95rem;">To become the global trusted producer of biomass charcoal, significantly empowering Central Java's economy while preserving our ecological heritage.</p>
-            </div>
-            <div class="info-glass-card" style="flex: 1; padding: 40px; border-top-color: #fff;">
-                <h2 style="font-size: 1.5rem; color: #fff;">The Mission</h2>
-                <p style="font-size: 0.95rem;">Producing export-grade briquettes through zero-waste technology and ethical fair-trade partnerships with local coconut farmers.</p>
-            </div>
-        </div>
-        <div class="slide-interaction-footer">
-            <div class="action-group">
-                <a href="#slide-product" class="btn-universal btn-outline">The High-Heat Solution</a>
+            <div class="split-image">
+                <img src="pexels-tomfisk-1726622.jpg" alt="Sustainable Fields">
             </div>
         </div>
     </section>
 
-    <section id="slide-product">
-        <div class="slide-heading-box">
-            <h1>Calorific Excellence</h1>
-            <p>Engineered <span>For Global BBQ Standards</span></p>
+    <section id="product" class="content-section bg-light">
+        <div class="section-title">
+            <h2>Engineered for <span>Heat</span></h2>
+            <p>Smokeless, odorless, and perfectly molded for BBQ and industrial needs.</p>
         </div>
-        <div class="specs-strip-visual">
-            <div class="spec-unit">
-                <div class="spec-unit-value">7,200</div>
-                <div class="spec-unit-label">Kcal/kg Energy</div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-value">7,200</div>
+                <div class="feature-title">Kcal/kg Energy</div>
             </div>
-            <div class="spec-unit">
-                <div class="spec-unit-value">Max 4%</div>
-                <div class="spec-unit-label">Moisture Content</div>
+            <div class="feature-card">
+                <div class="feature-value">3 Hr</div>
+                <div class="feature-title">Burn Time</div>
             </div>
-            <div class="spec-unit">
-                <div class="spec-unit-value">Min 80%</div>
-                <div class="spec-unit-label">Fixed Carbon</div>
+            <div class="feature-card">
+                <div class="feature-value">< 4%</div>
+                <div class="feature-title">Moisture Content</div>
             </div>
-        </div>
-        <div class="slide-interaction-footer">
-            <div class="action-group">
-                <a href="#slide-process" class="btn-universal btn-gold-fill">Our Process</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="slide-process">
-        <div class="slide-heading-box" style="margin-top: -5vh;">
-            <h1>The Carbon Path</h1>
-            <p>Zero-Chemical <span>Natural Refinement</span></p>
-        </div>
-        <div class="manufacturing-grid">
-            <div class="m-step"><span class="m-step-idx">01</span><h3>Carbonization</h3><p>Retort kiln processing at 500°C for extreme purity.</p></div>
-            <div class="m-step"><span class="m-step-idx">02</span><h3>Crushing</h3><p>Milling into ultra-fine 60-mesh powder for density.</p></div>
-            <div class="m-step"><span class="m-step-idx">03</span><h3>Blending</h3><p>Natural tapioca binding at 10:1 ratio—no additives.</p></div>
-            <div class="m-step"><span class="m-step-idx">04</span><h3>Molding</h3><p>High-pressure industrial press for hexagonal precision.</p></div>
-            <div class="m-step"><span class="m-step-idx">05</span><h3>Drying</h3><p>Intensive oven thermal treatment for instant ignition.</p></div>
-            <div class="m-step"><span class="m-step-idx">06</span><h3>Inspection</h3><p>SGS Standard quality control for global shipping.</p></div>
-        </div>
-        <div class="slide-interaction-footer">
-            <div class="action-group">
-                <a href="#slide-contact" class="btn-universal btn-outline">Investment Inquiry</a>
+            <div class="feature-card">
+                <div class="feature-value">Min 80%</div>
+                <div class="feature-title">Fixed Carbon</div>
             </div>
         </div>
     </section>
 
-    <section id="slide-contact">
-        <div class="slide-heading-box">
-            <h1>Partner With NAF</h1>
-            <p>Certified <span>Export Quality</span> Portfolio</p>
+    <section class="content-section">
+        <div class="split-layout" style="flex-direction: row-reverse;">
+            <div class="split-text">
+                <h3>Our Process & Commitment</h3>
+                <p>We process raw shells through closed retort kilns at 500°C for extreme carbon purity, then blend them with 100% natural tapioca binders.</p>
+                <p><strong>Vision:</strong> To become a globally trusted producer contributing to environmental sustainability.</p>
+                <p><strong>Mission:</strong> Produce export-grade briquettes and build ethical fair-trade partnerships with local coconut farmers.</p>
+            </div>
+            <div class="split-image">
+                <img src="medium-shot-engineers-talking-outdoors.jpg" alt="Engineering Team">
+            </div>
+        </div>
+    </section>
+
+    <section id="sgs" class="content-section certificate-section">
+        <div class="section-title">
+            <h2>Guaranteed <span>Quality</span></h2>
+            <p>Our specifications are strictly tested to meet International Export Standards.</p>
+        </div>
+        <div class="certificate-wrapper">
+            <img src="Screenshot 2026-06-09 012137.png" alt="SGS Specification Document">
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Build a Sustainable Future</h2>
+            <p style="color: var(--text-gray); margin-bottom: 30px;">For strategic inquiries, export orders, and sample requests.</p>
+            
+            <a href="mailto:nafianismun@gmail.com" class="footer-email">nafianismun@gmail.com</a>
+            
+            <a href="https://wa.me/6281953788109" class="btn-primary" style="background-color: #25D366; box-shadow: none;">WhatsApp Us (+62 819-5378-8109)</a>
         </div>
         
-        <div class="info-glass-card" style="background: rgba(0,0,0,0.85); width: 100%;">
-            <p style="margin-bottom: 25px; font-weight: 500; color: #fff; letter-spacing: 1px;">FOR STRATEGIC INQUIRIES & GLOBAL ORDERS:</p>
-            
-            <a href="mailto:nafianismun@gmail.com" style="display: block; font-size: clamp(1.8rem, 4vw, 3rem); color: var(--brand-gold); margin-bottom: 10px; font-family: 'Montserrat'; text-decoration: none;">nafianismun@gmail.com</a>
-            <p style="font-size: 1.5rem; color: #fff; font-weight: 600; margin-bottom: 35px;">+62 819 5378 8109</p>
-
-            <div class="action-group" style="justify-content: center;">
-                <a href="https://wa.me/6281953788109" class="btn-universal btn-gold-fill">Connect On WhatsApp</a>
-            </div>
+        <div class="footer-bottom">
+            <p>NAF Ismun Nafian Company &copy; 2026. Demak, Central Java, Indonesia. All Rights Reserved.</p>
         </div>
-
-        <div class="slide-interaction-footer">
-            <div style="font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 2px;">
-                NAF Ismun Nafian Company &copy; 2026 | Central Java, Indonesia
-            </div>
-        </div>
-    </section>
+    </footer>
 
 </body>
 </html>
