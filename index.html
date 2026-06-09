@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 1. VARIABEL DESAIN (DARK LUXURY) --- */
+        /* --- 1. DESIGN VARIABLES (DARK LUXURY) --- */
         :root {
             --sidebar-width: 300px;
             --bg-pure-black: #050505;
             --bg-surface: #111111;
             --text-main: #F3F4F6;
             --text-muted: #9CA3AF;
-            --brand-gold: #D4AF37; /* Emas Klasik/Premium */
+            --brand-gold: #D4AF37; /* Premium Classic Gold */
             --brand-gold-dim: rgba(212, 175, 55, 0.2);
             --glass-bg: rgba(10, 10, 10, 0.65);
         }
@@ -38,7 +38,7 @@
             overflow-x: hidden;
         }
 
-        /* --- 2. SIDEBAR NAVIGASI (KIRI) --- */
+        /* --- 2. SIDEBAR NAVIGATION (LEFT) --- */
         .sidebar {
             position: fixed;
             top: 0;
@@ -117,7 +117,7 @@
         }
         .sidebar-footer a:hover { color: var(--brand-gold); }
 
-        /* --- 3. KONTEN UTAMA --- */
+        /* --- 3. MAIN CONTENT --- */
         .main-wrapper {
             margin-left: var(--sidebar-width);
             width: calc(100% - var(--sidebar-width));
@@ -150,7 +150,7 @@
             text-transform: uppercase;
         }
 
-        /* --- ANIMASI CSS (Akan dipicu oleh JavaScript) --- */
+        /* Reveal on Scroll Animations */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -161,7 +161,7 @@
             transform: translateY(0);
         }
 
-        /* --- 4. KOMPONEN DESAIN --- */
+        /* --- 4. DESIGN COMPONENTS --- */
         /* Glass Card */
         .glass-panel {
             background: var(--glass-bg);
@@ -172,12 +172,12 @@
             border-top: 3px solid var(--brand-gold);
         }
 
-        /* Grid Sistem */
+        /* Grid Systems */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 
-        /* Tombol */
+        /* Gold Button */
         .btn-gold {
             display: inline-block;
             background-color: var(--brand-gold);
@@ -198,7 +198,7 @@
             box-shadow: 0 10px 20px var(--brand-gold-dim);
         }
 
-        /* --- 5. SECTION BACKGROUNDS & SPESIFIK --- */
+        /* --- 5. SECTION BACKGROUNDS & SPECIFICS --- */
         
         /* 1. Hero */
         #hero {
@@ -207,10 +207,10 @@
             background-position: center;
             background-attachment: fixed;
         }
-        #hero h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); margin-bottom: 20px; }
-        #hero p { font-size: 1.2rem; max-width: 600px; color: #E5E7EB; }
+        #hero h1 { font-size: clamp(3.5rem, 6vw, 5.5rem); margin-bottom: 20px; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
+        #hero p { font-size: 1.2rem; max-width: 600px; color: #E5E7EB; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
-        /* 2. Eksekutif / The Origin */
+        /* 2. Executive / The Origin */
         #origin { background-color: var(--bg-surface); }
         .origin-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.1rem; text-align: justify; }
 
@@ -224,7 +224,7 @@
         .esg-card ul { padding-left: 20px; margin-top: 15px; }
         .esg-card li { margin-bottom: 12px; color: #D1D5DB; }
 
-        /* 4. Portofolio Produk */
+        /* 4. Product Portfolio */
         .feature-box {
             background: #111;
             padding: 40px 30px;
@@ -260,10 +260,11 @@
             background-position: center;
         }
 
-        /* 8. Kontak & Penutup */
+        /* 8. Investor Relations / Contact */
         #contact {
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url('pexels-maltelu-13037136.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url('pngegg.png');
             background-size: cover;
+            background-position: center;
             text-align: center;
         }
         .contact-email {
@@ -276,7 +277,7 @@
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
-        /* --- RESPONSIVE MOBILE --- */
+        /* --- 6. RESPONSIVE OPTIMIZATION --- */
         @media (max-width: 992px) {
             .sidebar {
                 width: 100%;
@@ -307,14 +308,14 @@
             <div class="brand-title">NAF <span>CO.</span></div>
         </a>
         <div class="nav-links">
-            <a href="#hero">Beranda</a>
-            <a href="#origin">Ringkasan Eksekutif</a>
-            <a href="#esg">Komitmen ESG</a>
-            <a href="#product">Portofolio Produk</a>
-            <a href="#market">Strategi Ekspansi</a>
-            <a href="#manufacturing">Operasional</a>
+            <a href="#hero" class="active">Home</a>
+            <a href="#origin">Executive Summary</a>
+            <a href="#esg">ESG Commitment</a>
+            <a href="#product">Product Portfolio</a>
+            <a href="#market">Expansion Strategy</a>
+            <a href="#manufacturing">Operations</a>
             <a href="#quality">Quality Assurance</a>
-            <a href="#contact">Hubungan Investor</a>
+            <a href="#contact">Investor Relations</a>
         </div>
         <div class="sidebar-footer">
             <p>Direct Inquiries</p>
@@ -326,44 +327,45 @@
     <div class="main-wrapper">
 
         <section id="hero">
-            <div class="reveal">
-                <span class="section-tag">Investasi Masa Depan</span>
+            <div class="reveal active">
+                <span class="section-tag">Investment Opportunity</span>
                 <h1>Briket Berkat</h1>
-                <p>Solusi energi biomassa premium dari Demak, Indonesia. Mentransformasi limbah organik menjadi briket arang berkualitas ekspor dunia dengan panas maksimal dan 100% bebas kimia.</p>
-                <a href="#origin" class="btn-gold">Eksplorasi Bisnis</a>
+                <p>Premium biomass energy solution from Demak, Indonesia. Transforming organic waste into export-quality charcoal briquettes with maximum heat and 100% free of chemicals.</p>
+                <a href="#origin" class="btn-gold">Explore the Business</a>
             </div>
         </section>
 
         <section id="origin">
             <div class="grid-2 align-items-center">
                 <div class="origin-text reveal">
-                    <span class="section-tag">Ringkasan Eksekutif</span>
+                    <span class="section-tag">Executive Summary</span>
                     <h2 class="section-title">The Origin</h2>
-                    <p>Persoalan energi dan pengelolaan limbah biomassa merupakan tantangan krusial, khususnya di wilayah pesisir Demak, Jawa Tengah. Seiring dengan melonjaknya kebutuhan energi alternatif pengganti fosil, jutaan ton limbah tempurung kelapa dari industri kopra terbuang sia-sia.</p>
-                    <p><strong>Briket Berkat (NAF Company)</strong> didirikan untuk menjembatani celah tersebut. Kami mengelola limbah biomassa secara produktif, mengubahnya menjadi arang briket bernilai ekonomi tinggi yang jauh melampaui efisiensi arang konvensional.</p>
+                    <p>Energy challenges and biomass waste management are deeply connected issues, particularly in coastal regions like Demak, Central Java. In addition to a rising global need for alternative energy to replace fossil fuels, millions of tons of coconut shell waste from the kopra industry go to waste without optimal utilization.</p>
+                    <p><strong>Briket Berkat (NAF Company)</strong> was founded to bridge that gap. We productively manage abundant biomass waste, transforming it into charcoal briquettes with high economic value that far exceed the efficiency of conventional charcoal.</p>
+                    <p>Our commitment to preserving the environment is absolute, ensuring future generations can still enjoy the beauty of the Indonesian archipelago.</p>
                 </div>
                 <div class="reveal">
-                    <img src="pexels-cottonbro-5608056.jpg" alt="Bahan Baku Tempurung Kelapa" style="width: 100%; border-radius: 8px; border-bottom: 5px solid var(--brand-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <img src="pexels-cottonbro-5608056.jpg" alt="Coconut Shell Raw Material" style="width: 100%; border-radius: 8px; border-bottom: 5px solid var(--brand-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
                 </div>
             </div>
         </section>
 
         <section id="esg">
             <div class="reveal">
-                <span class="section-tag">Sustainability (Keberlanjutan)</span>
-                <h2 class="section-title">Komitmen ESG</h2>
+                <span class="section-tag">Sustainability & Global Impact</span>
+                <h2 class="section-title">ESG Commitment</h2>
             </div>
             <div class="grid-2 reveal">
                 <div class="glass-panel esg-card">
-                    <h3>Visi Perusahaan</h3>
-                    <p>Menjadi produsen briket arang tempurung kelapa global yang terpercaya, berkontribusi nyata pada kelestarian lingkungan (Zero Deforestation) dan pemberdayaan ekonomi sirkular lokal di Jawa Tengah.</p>
+                    <h3>Company Vision</h3>
+                    <p>To be a trusted producer of biomass charcoal briquettes, significantly contributing to environmental sustainability (Zero Deforestation) and local circular economic empowerment in Central Java, Indonesia.</p>
                 </div>
                 <div class="glass-panel esg-card">
-                    <h3>Misi Strategis</h3>
+                    <h3>Strategic Missions</h3>
                     <ul>
-                        <li>Optimalisasi 100% limbah organik tanpa penebangan pohon.</li>
-                        <li>Memproduksi briket standar SGS untuk pasar ekspor Eropa dan Timur Tengah.</li>
-                        <li>Membangun kemitraan *fair-trade* dengan petani kelapa lokal untuk rantai pasok jangka panjang.</li>
+                        <li>Optimalization of 100% organic waste into high-economic-value products.</li>
+                        <li>Produce SGS standard briquettes for European and Middle Eastern export markets.</li>
+                        <li>Build ethical fair-trade partnerships with local coconut farmers for a sustainable long-term supply chain.</li>
                     </ul>
                 </div>
             </div>
@@ -371,22 +373,22 @@
 
         <section id="product">
             <div class="reveal">
-                <span class="section-tag">Spesifikasi Premium</span>
-                <h2 class="section-title">Portofolio Produk</h2>
-                <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 50px;">Briket Berkat didesain khusus (Hexagonal, Silinder, Kotak) menggunakan perekat alami tepung tapioka. Aman untuk industri pangan (Food-Safe) dan ideal untuk budaya Barbeque (BBQ) internasional maupun kebutuhan industri.</p>
+                <span class="section-tag">SGS Target Standards</span>
+                <h2 class="section-title">Product Portfolio</h2>
+                <p style="color: var(--text-muted); max-width: 800px; margin-bottom: 50px;">Briket Berkat is specifically designed in various shapes (Hexagonal, Cylinder, Cube) using only natural tapioca adhesive. It is completely safe for the food industry (Food-Safe) and ideal for international Barbeque (BBQ) culture and industrial needs.</p>
             </div>
             <div class="grid-4 reveal">
                 <div class="feature-box">
-                    <h4>7.200</h4>
-                    <p>Kcal/kg Nilai Kalor</p>
+                    <h4>7,200</h4>
+                    <p>Kcal/kg Calorific Value</p>
                 </div>
                 <div class="feature-box">
-                    <h4>3 Jam</h4>
-                    <p>Durasi Bakar</p>
+                    <h4>3 Hours</h4>
+                    <p>Burning Duration</p>
                 </div>
                 <div class="feature-box">
                     <h4>< 4%</h4>
-                    <p>Kadar Air (Moisture)</p>
+                    <p>Moisture Content</p>
                 </div>
                 <div class="feature-box">
                     <h4>> 80%</h4>
@@ -395,20 +397,20 @@
             </div>
             <div class="grid-4 reveal" style="margin-top: 20px;">
                 <div class="feature-box" style="background: transparent; border: 1px solid #333;">
-                    <h4 style="font-size: 1.2rem; color: #fff;">100% Alami</h4>
-                    <p style="color: var(--text-muted);">Bebas Kimia</p>
+                    <h4 style="font-size: 1.1rem; color: #fff;">100% Natural</h4>
+                    <p style="color: var(--text-muted);">No Chemicals</p>
                 </div>
                 <div class="feature-box" style="background: transparent; border: 1px solid #333;">
-                    <h4 style="font-size: 1.2rem; color: #fff;">Rendah Asap</h4>
-                    <p style="color: var(--text-muted);">Tidak Berbau</p>
+                    <h4 style="font-size: 1.1rem; color: #fff;">Low Smoke</h4>
+                    <p style="color: var(--text-muted);">Odorless</p>
                 </div>
                 <div class="feature-box" style="background: transparent; border: 1px solid #333;">
-                    <h4 style="font-size: 1.2rem; color: #fff;">Kadar Abu</h4>
-                    <p style="color: var(--text-muted);">Maksimal 2.5%</p>
+                    <h4 style="font-size: 1.1rem; color: #fff;">Ash Content</h4>
+                    <p style="color: var(--text-muted);">Max 2.5%</p>
                 </div>
                 <div class="feature-box" style="background: transparent; border: 1px solid #333;">
-                    <h4 style="font-size: 1.2rem; color: #fff;">Efisien</h4>
-                    <p style="color: var(--text-muted);">Mudah Terbakar</p>
+                    <h4 style="font-size: 1.1rem; color: #fff;">Efficient</h4>
+                    <p style="color: var(--text-muted);">Ignites Quickly</p>
                 </div>
             </div>
         </section>
@@ -417,26 +419,26 @@
             <div class="grid-2">
                 <div class="glass-panel reveal">
                     <span class="section-tag">Market Analysis</span>
-                    <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 30px;">Strategi Ekspansi</h2>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 30px;">Expansion Strategy</h2>
                     
                     <div class="market-list">
-                        <h4>Pasar Ekspor (Fokus Utama)</h4>
-                        <p>Tingginya budaya BBQ di Eropa (Jerman, Belanda) dan kebutuhan sosial di Timur Tengah (Arab Saudi, UEA). Harga ekspor menjanjikan margin tinggi (USD 1.5 - 2.5/kg).</p>
+                        <h4>Export Market (Primary Focus)</h4>
+                        <p>Driven by strong BBQ cultures in Europe (Germany, Netherlands) and social shisha needs in the Middle East (Saudi Arabia, UAE). Export prices promise high margins (USD 1.5 - 2.5/kg).</p>
                     </div>
                     <div class="market-list">
-                        <h4>Penetrasi Domestik</h4>
-                        <p>Suplai rutin ke restoran BBQ, warung sate, dan katering di area Pantai Utara Jawa (Demak, Kudus, Jepara).</p>
+                        <h4>Domestic Penetration</h4>
+                        <p>Routine supply to premium BBQ restaurants, local culinary centers, and catering services in the North Coast of Java (Demak, Kudus, Jepara).</p>
                     </div>
                     <div class="market-list">
-                        <h4>Distribusi Digital (E-Commerce)</h4>
-                        <p>Penjualan ritel (1kg, 3kg, 5kg) melalui Shopee, Tokopedia, dan pemasaran agresif via Instagram/TikTok (@briketberkat.official).</p>
+                        <h4>Digital Distribution (Retail)</h4>
+                        <p>Retail sales of 1kg, 3kg, and 5kg packs through Shopee, Tokopedia, and aggressive direct marketing via @briketberkat.official.</p>
                     </div>
                 </div>
-                <div class="glass-panel reveal" style="background: rgba(0,0,0,0.85);">
-                    <h3 style="color: var(--brand-gold); margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase;">Keunggulan Kompetitif (SWOT)</h3>
-                    <p style="color: #fff; margin-bottom: 15px;"><strong>Kekuatan Strategis:</strong> Lokasi fasilitas produksi kami di Demak memberikan keunggulan jarak yang sangat efisien menuju <strong>Pelabuhan Tanjung Emas, Semarang</strong>. Hal ini memangkas biaya logistik ekspor secara signifikan.</p>
-                    <p style="color: #fff; margin-bottom: 15px;"><strong>Peluang Ekosistem:</strong> Ketersediaan bahan baku lokal yang melimpah dipadukan dengan regulasi pemerintah yang mendukung ekspor biomassa ramah lingkungan.</p>
-                    <p style="color: #fff;"><strong>Solusi Skalabilitas:</strong> Bermitra dengan Koperasi Briket Jawa Tengah untuk akselerasi ekspor dan pengurusan perizinan (NIB & SGS) yang lebih efisien.</p>
+                <div class="glass-panel reveal" style="background: rgba(0,0,0,0.85); border: 1px solid var(--brand-gold-dim);">
+                    <h3 style="color: #fff; margin-bottom: 25px; font-size: 1.5rem; text-transform: uppercase;">Competitive Advantage (SWOT)</h3>
+                    <p style="color: #fff; margin-bottom: 15px;"><strong>Strategic Strength:</strong> Our production facility in Demak provides a highly efficient logisctics advantage to <strong>Tanjung Emas Port, Semarang</strong>. This cuts export logistical costs significantly.</p>
+                    <p style="color: #fff; margin-bottom: 15px;"><strong>Ecosystem Opportunity:</strong> Abundant availability of local raw materials (kopra waste) combined with government regulations supporting eco-friendly biomass export.</p>
+                    <p style="color: #fff;"><strong>Scalability Solution:</strong> Partnering with the Central Java Briquet Cooperative to accelerate exports and handle NIB & SGS permits more efficiently.</p>
                 </div>
             </div>
         </section>
@@ -444,29 +446,29 @@
         <section id="manufacturing">
             <div class="reveal">
                 <span class="section-tag">Operational Excellence</span>
-                <h2 class="section-title">6 Tahap Manufaktur</h2>
+                <h2 class="section-title">6 Manufacturing Stages</h2>
             </div>
             <div class="grid-2 reveal">
                 <div>
                     <div class="step-wrapper">
                         <div class="step-number">01</div>
                         <div class="step-detail">
-                            <h4>Pengadaan Bahan Baku</h4>
-                            <p>Sourcing tempurung kelapa matang dengan kadar air < 15% dari pengepul lokal dan pasar tradisional Jepara.</p>
+                            <h4>Raw Material Procurement</h4>
+                            <p>Sourcing mature coconut shells with moisture content < 15% from local collectors and Jepara traditional markets.</p>
                         </div>
                     </div>
                     <div class="step-wrapper">
                         <div class="step-number">02</div>
                         <div class="step-detail">
-                            <h4>Karbonisasi (Pirolisis)</h4>
-                            <p>Pembakaran dalam <i>retort kiln</i> tertutup (300-500°C) selama 4-6 jam. Asap didaur ulang untuk efisiensi energi (Zero Waste).</p>
+                            <h4>Carbonization (Pyrolysis)</h4>
+                            <p>Pembakaran dalam closed retort kiln (300-500°C) selama 4-6 jam. Asap didaur ulang untuk efisiensi energi (Zero Waste).</p>
                         </div>
                     </div>
                     <div class="step-wrapper">
                         <div class="step-number">03</div>
                         <div class="step-detail">
-                            <h4>Pendinginan & Penggilingan</h4>
-                            <p>Arang didinginkan minimal 12 jam, lalu digiling menggunakan mesin <i>crusher</i> menjadi serbuk mikro 40-60 mesh.</p>
+                            <h4>Cooling & Milling</h4>
+                            <p>Charcoal is cooled for at least 12 hours, then ground using a crusher machine into fine 40-60 mesh powder.</p>
                         </div>
                     </div>
                 </div>
@@ -474,104 +476,5 @@
                     <div class="step-wrapper">
                         <div class="step-number">04</div>
                         <div class="step-detail">
-                            <h4>Pencampuran (Mixing)</h4>
-                            <p>Serbuk arang diaduk secara homogen dengan cairan perekat alami tepung tapioka (rasio 10:1).</p>
-                        </div>
-                    </div>
-                    <div class="step-wrapper">
-                        <div class="step-number">05</div>
-                        <div class="step-detail">
-                            <h4>Pencetakan (Molding)</h4>
-                            <p>Adonan diproses di mesin <i>press</i> hidrolik/semi-otomatis menjadi bentuk presisi tinggi (kapasitas 50-80 kg/jam).</p>
-                        </div>
-                    </div>
-                    <div class="step-wrapper">
-                        <div class="step-number">06</div>
-                        <div class="step-detail">
-                            <h4>Pengeringan & Pengemasan</h4>
-                            <p>Oven termal selama 1-2 hari menurunkan kadar air hingga < 8%. Dilanjutkan dengan inspeksi QC sebelum masuk ke <i>master carton</i>.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="quality">
-            <div class="glass-panel reveal" style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <span class="section-tag">Sertifikasi & Standar</span>
-                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 20px;">Quality Assurance</h2>
-                <p style="color: #E5E7EB; font-size: 1.1rem; margin-bottom: 30px;">Setiap *batch* produksi Briket Berkat dipantau secara ketat untuk memenuhi dan melampaui persyaratan importir Eropa, merujuk pada standar laboratorium internasional (SGS / Bureau Veritas).</p>
-                <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; display: flex; justify-content: space-around;">
-                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">SGS</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">TARGET EXPORT</p></div>
-                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">100%</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">NATURAL BINDER</p></div>
-                    <div><h4 style="color: var(--brand-gold); font-size: 1.5rem;">HALAL</h4><p style="font-size: 10px; color: #aaa; letter-spacing: 1px;">MID-EAST MARKET</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="glass-panel reveal" style="max-width: 900px; margin: 0 auto; background: rgba(5,5,5,0.85); border: 1px solid var(--brand-gold-dim);">
-                <span class="section-tag">Hubungan Investor</span>
-                <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 10px;">Mari Berkolaborasi</h2>
-                <p style="color: var(--text-muted); margin-bottom: 40px;">Untuk pertanyaan investasi, pengadaan B2B skala besar, dan permintaan sampel ekspor, silakan hubungi tim eksekutif kami secara langsung.</p>
-                
-                <a href="mailto:nafianismun@gmail.com" class="contact-email">nafianismun@gmail.com</a>
-                <p style="font-size: 1.5rem; color: #fff; font-weight: 700; margin-bottom: 40px; letter-spacing: 2px;">+62 819 5378 8109</p>
-
-                <a href="https://wa.me/6281953788109" class="btn-gold">Hubungi Via WhatsApp</a>
-            </div>
-            
-            <div style="position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center;">
-                <p style="font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 2px; text-transform: uppercase;">
-                    NAF Ismun Nafian Company &copy; 2026 | Demak, Jawa Tengah, Indonesia
-                </p>
-            </div>
-        </section>
-
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animasi Scroll (Reveal on Scroll)
-            const reveals = document.querySelectorAll('.reveal');
-            
-            const revealOnScroll = () => {
-                const windowHeight = window.innerHeight;
-                const elementVisible = 150;
-                
-                reveals.forEach(reveal => {
-                    const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
-                });
-            };
-
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Trigger sekali saat halaman dimuat
-
-            // Highlight Sidebar Navigasi saat di-scroll
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                            <h4>Blending (Mixing)```json?chameleon
+{"component":"LlmGeneratedComponent","props":{"height":"800px","prompt":"Update the Briket Berkat investor relations dashboard. A fixed vertical sidebar navigation on the left (with brand text NAF COMPANY and gold accent gold span), containing links (Home, Executive Summary, ESG Commitment, Product Portfolio, Expansion Strategy, Operations, Quality Assurance, Investor Relations). Direct inquiries footer section at bottom with email 'nafianismun@gmail.com' and phone '+62 819 5378 8109'. Main wrapper on the right has min-height 100vh sections with reveal-on-scroll animations. Latar belakang for the hero section remains 'pexels-martin-bohac-138434526-10475925.jpg'. Origin section background remains surface color with split layout (text and green fields photo). ESG section background remains green fields photo with glass panels. Product portfolio section has numerical feature boxes grid with updated English calorific (7200), moisture (< 4%), burn time (3 Hr), fixed carbon (Min 80%) values derived from my educational knowledge and translations. Additional translated transparent boxes below (100% Natural, Odorless, Ash Content < 2.5%, Efficient & Flammable). Expansion strategy section background remains engineers photo with glass panels
